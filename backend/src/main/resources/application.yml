@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    mariadb:
+      url: jdbc:mariadb://localhost:3306/undergraduate_thesis?useLegacyDatetimeCode=false&serverTimezone=UTC
+      username: root
+      password: 112
+      driver-class-name: org.mariadb.jdbc.Driver
+    postgresql:
+      url: jdbc:postgresql://localhost:5432/undergraduate_thesis?useLegacyDatetimeCode=false&serverTimezone=UTC
+      username: postgres
+      password: 112
+mqtt:
+  broker-url: tcp://broker.emqx.io:1883
+  client-id: backend-service
+  username: mqtt_user
+  password: mqtt_password
