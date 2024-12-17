@@ -16,11 +16,10 @@ public class MapType extends AbstractAuditingEntity<Integer> {
     @Column(name = "type_id", nullable = false)
     private Integer typeId;
 
-    @Column(name = "device_id", nullable = false)
-    private Integer deviceId;
+    @Column(name = "device_serial_number", nullable = false)
+    private String deviceSerialNumber;
 
     @Column(name = "type_category", nullable = false)
     private Integer typeCategory;
-
 
 }

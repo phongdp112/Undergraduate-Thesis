@@ -14,3 +14,7 @@ mqtt:
   client-id: backend-service
   username: mqtt_user
   password: mqtt_password
+
+jwt:
+  secret-key: "Q^*]U3$H64:ymD'jE_SL?;tc@7P`&p:(9uFR>d=!A2)G5}%vnk:"
+  time-out: 2000000

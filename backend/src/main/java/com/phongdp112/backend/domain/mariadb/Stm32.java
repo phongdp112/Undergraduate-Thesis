@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "stm32s")
 @Getter
@@ -21,4 +23,10 @@ public class Stm32 extends AbstractAuditingEntity<Integer>{
 
     @Column(name = "stm32_name", length = 100)
     private String stm32Name;
+    @Column(name="is_connected")
+    private boolean isConnected;
+    @Column(name="last_connected")
+    private LocalDate lastConnected;
+    @Column(name = "device_quantity")
+    private Integer deviceQuantity;
 }

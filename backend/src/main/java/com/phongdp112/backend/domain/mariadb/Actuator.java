@@ -28,5 +28,6 @@ public class Actuator extends AbstractAuditingEntity<String>{
     @Column(name = "actuator_name", nullable = false, length = 100)
     private String actuatorName;
 
-
+    @Column(name="is_turn")
+    private boolean isTurn;
 }

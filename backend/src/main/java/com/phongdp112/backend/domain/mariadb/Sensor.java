@@ -23,4 +23,6 @@ public class Sensor extends AbstractAuditingEntity<String> {
 
     @Column(name = "sensor_name", nullable = false, length = 100)
     private String sensorName;
+    @Column(name="is_turn")
+    private boolean isTurn;
 }

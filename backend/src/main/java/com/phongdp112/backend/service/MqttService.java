@@ -16,7 +16,22 @@ public class MqttService {
     public MqttService(MqttClient mqttClient) {
         this.mqttClient = mqttClient;
     }
+    public void publishConnected(String stm32Serial,String payload) {
+        String topic = "/stm32/"+stm32Serial+"/connected";
+        try {
+            // Create an MQTT message
+            MqttMessage message = new MqttMessage(payload.getBytes());
+            message.setQos(1);  // Quality of Service (QoS) level
+            message.setRetained(false);  // The message will not be retained by the broker
 
+            // Publish the message
+            mqttClient.publish(topic, message);
+            System.out.println("Data sent to topic: " + topic);
+
+        } catch (MqttException e) {
+            System.err.println("Failed to publish message: " + e.getMessage());
+        }
+    }
     // Publish data to MQTT topic
     public void publish(String userId, String stm32Id, String sensorId, String payload) {
         String topic = "user/" + userId + "/stm32/" + stm32Id + "/sensor/" + sensorId;
